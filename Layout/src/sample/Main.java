@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import java.awt.*;
 import java.security.acl.Group;
 
+/*
+ *Java FX 页面间的跳转
+ */
 public class Main extends Application {
     public static void main(String[] args) {
         Application.launch(args);
