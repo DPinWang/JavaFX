@@ -1,14 +1,13 @@
-package sample;
+package sample.UI;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.Controller.MainController;
 
 public class Main extends Application {
 
@@ -21,12 +20,12 @@ public class Main extends Application {
 
         Button buttonRead = new Button("导入秘钥");
         buttonRead.setOnAction(event -> {
-            Controller.mainOnButtonReadAction();
+            MainController.onButtonReadAction();
         });
 
         Button buttonCreate = new Button("生成秘钥");
         buttonCreate.setOnAction(event -> {
-            Controller.mainOnButtonCreateAction();
+            MainController.onButtonCreateAction();
         });
 
         HBox hBox1 = new HBox(10);

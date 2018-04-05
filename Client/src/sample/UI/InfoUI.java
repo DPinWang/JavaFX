@@ -1,4 +1,4 @@
-package sample;/**
+package sample.UI;/**
  * Created by wdphu on 2018/4/4.
  */
 
@@ -7,10 +7,10 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sample.Controller.InfoController;
 
 public class InfoUI extends Application {
 
@@ -79,19 +79,19 @@ public class InfoUI extends Application {
 
         Button buttonCreate = new Button("创建通道");
         buttonCreate.setOnAction(event -> {
-            Controller.infoOnButtonCreateAction();
+            InfoController.onButtonCreateAction();
         });
         gridPaneBottom.add(buttonCreate, 1, 2);
 
         Button buttonJoin = new Button("加入通道");
         buttonJoin.setOnAction(event -> {
-            Controller.infoOnButtonJoinAction();
+            InfoController.onButtonJoinAction();
         });
         gridPaneBottom.add(buttonJoin, 1, 4);
 
         Button buttonCancel = new Button("撤销通道");
         buttonCancel.setOnAction(event -> {
-            Controller.infoOnButtonCancelAction();
+            InfoController.onButtonCancelAction();
         });
         gridPaneBottom.add(buttonCancel, 1, 6);
 

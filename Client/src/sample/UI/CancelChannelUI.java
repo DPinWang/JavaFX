@@ -1,11 +1,11 @@
-package sample;/**
+package sample.UI;/**
  * Created by wdphu on 2018/4/4.
  */
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-public class JoinChannelUI extends Application {
+public class CancelChannelUI extends Application {
 
     public static void main(String[] args) {
         launch(args);
