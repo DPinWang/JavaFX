@@ -34,10 +34,10 @@ public class Main extends Application {
 
         //定义不同多个tablecolumn
         TableColumn<TestTableView,String> nameColumn=new TableColumn<TestTableView,String>("name");
+        TableColumn<TestTableView,String> name2Column=new TableColumn<TestTableView,String>("name2");
         TableColumn<TestTableView,String> firstColumn=new TableColumn<TestTableView,String>("firstName");
         TableColumn<TestTableView,String> LastColumn=new TableColumn<TestTableView,String>("lastName");
-        TableColumn<TestTableView,String> ageColumn=new TableColumn<TestTableView,String>("age");
-
+        TableColumn<TestTableView,String> ageColumn=new TableColumn<TestTableView,String>("agee");
 
         //把列和bean对应起来，这个很重要，两种写法，第一种
 //        firstColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<TestTableView, String>, ObservableValue<String>>() {
@@ -47,10 +47,15 @@ public class Main extends Application {
 //                return param.getValue().getFirstProperty();
 //            }
 //        });
+
+        //testing
+        TableColumn<TestTableView, String> testColumn = new TableColumn<TestTableView, String>("agee");
+        testColumn.setCellValueFactory(new PropertyValueFactory<TestTableView, String>("agee"));
+
         //第二种用法
         firstColumn.setCellValueFactory(new PropertyValueFactory<TestTableView,String>("firstName"));
         LastColumn.setCellValueFactory(new PropertyValueFactory<TestTableView,String>("lastName"));
-        ageColumn.setCellValueFactory(new PropertyValueFactory<TestTableView,String>("age"));
+        ageColumn.setCellValueFactory(new PropertyValueFactory<TestTableView,String>("agee"));
         System.out.println("zhge s  ces hide ");
 
 //        LastColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<TestTableView, String>, ObservableValue<String>>() {
@@ -66,13 +71,14 @@ public class Main extends Application {
 //                return param.getValue().getAgeProperty();
 //            }
 //        });
-        nameColumn.getColumns().addAll(firstColumn,LastColumn);
-        tableView.getColumns().addAll(nameColumn,ageColumn);
+        nameColumn.getColumns().addAll(firstColumn,testColumn);
+        name2Column.getColumns().addAll(LastColumn, ageColumn);
+        tableView.getColumns().addAll(nameColumn, name2Column);
 
         ObservableList<TestTableView> list=FXCollections.observableArrayList(
-                new TestTableView("zhang", "san", "45"),
-                new TestTableView("li", "si", "34"),
-                new TestTableView("wang", "wu", "78")
+                new TestTableView("zhang", "san", "45", "test"),
+                new TestTableView("li", "si", "34", "test"),
+                new TestTableView("wang", "wu", "78", "test")
         );
 
         tableView.setItems(list);

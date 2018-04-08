@@ -29,7 +29,7 @@ public class Main extends Application {
         Button button = new Button("button");
         button.setOnAction(event -> {
             System.out.println("button pressed");
-            InfoUI infoUI = new InfoUI(text.getText());
+            InfoUI infoUI = new InfoUI(text.getText(), primaryStage);
             infoUI.start(new Stage());
             primaryStage.hide();
         });

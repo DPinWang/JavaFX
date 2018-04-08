@@ -18,11 +18,13 @@ public class InfoUI extends Application {
     }
 
     private String string;
+    private Stage backStage;
 
     public InfoUI(){}
 
-    public InfoUI(String string){
+    public InfoUI(String string, Stage stage){
         this.string = string;
+        this.backStage = stage;
     }
 
     @Override
@@ -41,6 +43,8 @@ public class InfoUI extends Application {
         Button button = new Button("button");
         button.setOnAction(event -> {
             System.out.println(string);
+            backStage.show();
+            primaryStage.hide();
         });
         HBox hBox3 = new HBox(10);
         hBox3.setAlignment(Pos.CENTER);

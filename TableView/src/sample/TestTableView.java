@@ -17,15 +17,34 @@ public class TestTableView {
     private StringProperty firstName=new SimpleStringProperty();
     private StringProperty lastName=new SimpleStringProperty();
     private  StringProperty age=new SimpleStringProperty();
-    //下面就是中规中矩的写法，但是要注意和构造普通bean方法的区别
-    public TestTableView(String firstName,String lastName,String age){
+
+    //testing
+    private StringProperty test = new SimpleStringProperty();
+    public TestTableView(String firstName,String lastName,String age, String test){
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setAge(age);
+        this.setTest(test);
     }
-    public TestTableView(){
+    public String getTest(){
+        return this.test.get();
+    }
+    public void setTest(String test){
+        this.test.set(test);
+    }
+    public StringProperty getTestProperty(){
+        return this.test;
+    }
 
-    }
+    //下面就是中规中矩的写法，但是要注意和构造普通bean方法的区别
+//    public TestTableView(String firstName,String lastName,String age){
+//        this.setFirstName(firstName);
+//        this.setLastName(lastName);
+//        this.setAge(age);
+//    }
+//    public TestTableView(){
+//
+//    }
     public String getFirstName(){
         return this.firstName.get();
     }
